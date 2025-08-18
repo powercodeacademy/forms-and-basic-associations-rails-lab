@@ -1,3 +1,3 @@
-class Song < ActiveRecord::Base
+class Song < ApplicationRecord
   # add associations here
 end
