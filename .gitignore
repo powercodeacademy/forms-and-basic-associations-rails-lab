@@ -1,3 +1,27 @@
+
+# Ignore SQLite3 databases
+*.sqlite3*
+*.sqlite3-journal
+
+# Ignore log, tmp, and other Rails files
+log/*
+tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Rails credentials and secrets
+config/master.key
+config/credentials.yml.enc
+
+# Ignore byebug history
+.byebug_history
+
+# Ignore node modules and yarn
+node_modules/
+yarn-error.log
+
+# Ignore coverage reports
+coverage/
 # Created by https://www.gitignore.io/api/node
 
 .DS_Store
@@ -43,3 +67,5 @@ jspm_packages
 /log/*
 !/log/.keep
 /tmp
+
+/config/master.key
