@@ -1,3 +1,3 @@
 class Note < ApplicationRecord
-  # add associations here
+  belongs_to :song 
 end
