@@ -18,6 +18,8 @@ class Song < ApplicationRecord
 
   def note_contents=(contents)
     contents.each do |content|
+      next if content.blank?
+
       Note.find_or_create_by(content: content, song: self)
     end
   end
