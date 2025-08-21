@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-  # add associations
+  has_many :songs
 end
