@@ -19,8 +19,10 @@ class Song < ApplicationRecord
 
   def note_contents=(notes)
     notes.each do |note|
-      found_note = Note.find_or_create_by(content: note)
-      self.notes << found_note
+      if note.length > 0
+        found_note = Note.find_or_create_by(content: note)
+        self.notes << found_note
+      end
     end
   end
 end
