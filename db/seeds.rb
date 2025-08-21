@@ -1,13 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# ID3 tag music genres are surprisingly specific.
-
 genres = Hash[[
   "Blues",
   "Classic Rock",
@@ -159,4 +149,23 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+beatles  = Artist.create!(name: "The Beatles")
+beyonce  = Artist.create!(name: "Beyoncé")
+drake    = Artist.create!(name: "Drake")
+mozart   = Artist.create!(name: "Wolfgang Amadeus Mozart")
+taylor   = Artist.create!(name: "Taylor Swift")
 
+
+song1 = Song.create!(title: "Hey Jude", artist: beatles, genre: genres["Rock"])
+song2 = Song.create!(title: "Halo", artist: beyonce, genre: genres["Pop"])
+song3 = Song.create!(title: "God's Plan", artist: drake, genre: genres["Hip-Hop"])
+song4 = Song.create!(title: "Symphony No. 40", artist: mozart, genre: genres["Classical"])
+song5 = Song.create!(title: "Shake It Off", artist: taylor, genre: genres["Pop"])
+
+
+Note.create!(content: "Great singalong chorus!", song: song1)
+Note.create!(content: "Iconic piano intro", song: song1)
+Note.create!(content: "Powerful vocals", song: song2)
+Note.create!(content: "Catchy beat", song: song3)
+Note.create!(content: "Complex orchestration", song: song4)
+Note.create!(content: "Uplifting lyrics", song: song5)
