@@ -15,8 +15,8 @@ about various `Song`s. Our data model looks like this:
   - has many `Song`s
 - `Song`
   - has a `title` attribute (`String`)
-  - belongs to an `Artist`
-  - belongs to a `Genre`
+  - belongs to an `Artist` (make this optional with the `optional: true` option)
+  - belongs to a `Genre` (make this optional with the `optional: true` option)
   - has many `Note`s
 - `Genre`
   - has a `name` attribute (`String`)
