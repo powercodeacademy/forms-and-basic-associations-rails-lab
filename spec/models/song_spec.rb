@@ -1,6 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
+  describe 'associations' do
+    it 'belongs to an artist' do
+      song = Song.new
+      expect(song).to respond_to(:artist)
+    end
+
+    it 'belongs to a genre' do
+      song = Song.new
+      expect(song).to respond_to(:genre)
+    end
+
+    it 'is valid without an artist' do
+      song = Song.new(title: 'Song 1', genre: Genre.new(name: 'Genre 1'))
+      expect(song).to be_valid
+    end
+
+    it 'is valid without a genre' do
+      song = Song.new(title: 'Song 1', artist: Artist.new(name: 'Artist 1'))
+      expect(song).to be_valid
+    end
+  end
+
   describe 'artist_name' do
     it 'returns the artist name' do
       song = Song.new
