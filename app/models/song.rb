@@ -8,7 +8,6 @@ class Song < ApplicationRecord
   end
 
   def artist_name
-    self.artist ? self.artist.name : nil
     artist&.name
   end
 
