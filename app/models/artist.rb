@@ -1,3 +1,3 @@
 class Artist < ApplicationRecord
-  # add associations here
+  has_many :songs, dependent: :destroy
 end
