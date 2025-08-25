@@ -1,4 +1,5 @@
 class Song < ApplicationRecord
-  # add associations here
-  # IMPORTANT: add `optional: true` to the `belongs_to` associations
+  belongs_to :artist, optional: true
+  belongs_to :genre, optional: true
+  has_many :notes
 end
