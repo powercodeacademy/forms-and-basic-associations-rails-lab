@@ -19,6 +19,8 @@ class Song < ApplicationRecord
 
   def note_contents=(contents)
     contents.each do |content|
+      next if content.blank?
+
       self.notes << Note.create(content: content)
     end
   end
