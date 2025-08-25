@@ -1,5 +1,6 @@
 class Song < ApplicationRecord
   belongs_to :artist, optional: true
+  belongs_to :genre, optional: true
 
   def artist_name
     artist&.name
