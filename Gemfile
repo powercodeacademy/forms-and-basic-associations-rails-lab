@@ -30,12 +30,11 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development do
+group :development, :test do
 	gem 'webrick'
 	gem 'byebug'
 	gem 'spring'
 	gem 'rspec-rails', '~> 6.0'
 	gem 'capybara'
+	gem 'pry'
 end
-
-
