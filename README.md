@@ -44,26 +44,27 @@ This view should have a form that provides:
 - A text input box that sets the `Song`'s title.
 - A text input box for the `Artist`.
 - A selection box for `Genre`. Users should be able to pick amongst existing genres only.
-- Several text input boxes to add notes to the song. These should have the IDs
-  `song_notes_1`, `song_notes_2`, and so on for the specs to pass.
+- Several text input boxes to add notes to the song. These should have the IDs `song_notes_1`, `song_notes_2`, and so on for the specs to pass.
 
-This is a challenging lab. Here are some hints:
+Hints:
 
-- You might need to search around for how to pass an array using `strong_params`!
-- It's easy to get confused between getting an `Artist` _instance_ from a
-  `Song` and an `Artist`'s name. To help make your form work easier, solve the
-  `spec/models/song_spec.rb` _first_. You can run a single spec by invoking it
-  with e.g. `rspec spec/models/song_spec.rb`.
-  - This test requires that you create custom getter and setter methods in the
-    `Song` class for `artist_name` and `artist_name=`, as well as
-    `note_contents` and `note_contents=`.
-  - The `artist_name` getter method should return the name of the `Artist`
+- You might need to search for how to pass an array using `strong_params`.
+- It's easy to get confused between getting an `Artist` instance from a `Song` and an `Artist`'s name. To help make your form work easier, solve the `spec/models/song_spec.rb` first. You can run a single spec by invoking it with `bin/rspec spec/models/song_spec.rb`.
+  - This test requires that you create custom getter and setter methods in the `Song` class for `artist_name` and `artist_name=`, as well as `note_contents` and `note_contents=`.
+  - The `artist_name` getter method should return the name of the `Artist` associated with the `Song` as a string.
+  - The `artist_name=` setter method should take a string for an artist's name, and create a new `Artist` with that name associated with the `Song`.
+  - The `note_contents` getter method should return an array of strings for all the `Note` contents associated with the `Song`.
+  - The `note_contents=` setter method should take an array of string representing `Note` contents, and create a new `Note` for each element in the array.
+
+Make use of the references below.
+While you are directed to update `new.html.erb`, you will need to make changes in multiple models and the `SongsController`.
     associated with the `Song` as a string.
-  - The `artist_name=` setter method should take a string for an artist's name,
+
+- The `artist_name=` setter method should take a string for an artist's name,
     and create a new `Artist` with that name associated with the `Song`.
-  - The `note_contents` getter method should return an array of strings for all
+- The `note_contents` getter method should return an array of strings for all
     the `Note` contents associated with the `Song`.
-  - The `note_contents=` setter method should take an array of string
+- The `note_contents=` setter method should take an array of string
     representing `Note` contents, and create a new `Note` for each element in
     the array.
 - Make use of the references below!

@@ -1,3 +1,5 @@
+# Ignore Rails database files
+/db/*.sqlite3*
 
 # Ignore SQLite3 databases
 *.sqlite3*
